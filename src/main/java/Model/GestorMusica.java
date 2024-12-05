@@ -2,46 +2,37 @@ package Model;
 
 import java.util.ArrayList;
 
-public class GestorMusica
-{
+public class GestorMusica {
     private ArrayList<ListaReproduccion> listas;
     private ArrayList<Artista> artistas;
 
-    public GestorMusica()
-    {
-        listas = new ArrayList<ListaReproduccion>();
-        // especificar el tipo de cancion
-        artistas = new ArrayList<Artista>();
-        //tipo de artista
+    public GestorMusica() {
+        listas = new ArrayList<>();
+        artistas = new ArrayList<>();
     }
 
-    public void crearLista(String nombre)
-    {
-        // luego agregar funcionalidad
+    public void crearLista(String nombre) {
+        listas.add(new ListaReproduccion(nombre));
     }
 
-    public void crearArtista(String nombre)
-    {
-        // luego agregar funcionalidad
+    public void agregarArtista(String nombre) {
+        artistas.add(new Artista(nombre));
     }
 
-    public void crearCancion(String nombre, Artista artista)
-    {
-        // luego agregar funcionalidad
-    }
-
-    public void agregarCancionALista(String nombreLista, Cancion cancion)
-    {
-        // luego agregar funcionalidad
-    }
-
-    public ArrayList<ListaReproduccion> getListas()
-    {
+    public ArrayList<ListaReproduccion> getListas() {
         return listas;
     }
 
-    public ArrayList<Artista> getArtistas()
-    {
+    public ArrayList<Artista> getArtistas() {
         return artistas;
+    }
+
+    public void agregarCancionALista(String nombreLista, Cancion cancion) {
+        for (ListaReproduccion lista : listas) {
+            if (lista.getNombre().equals(nombreLista)) {
+                lista.agregarCancion(cancion);
+                break;
+            }
+        }
     }
 }

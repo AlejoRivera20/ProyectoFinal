@@ -1,24 +1,24 @@
 package Model;
 
-public class Cancion
-{
-    private String nombre;
-    private Artista artista;
+public class Cancion {
+    private String titulo;
+    private String artista;
 
-    public Cancion(String nombre, Artista artista)
-    {
-        this.nombre = nombre;
+    public Cancion(String titulo, String artista) {
+        this.titulo = titulo;
         this.artista = artista;
     }
 
-    public String getNombre()
-    {
-        return nombre;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public Artista getArtista()
-    {
+    public String getArtista() {
         return artista;
     }
-}
 
+    @Override
+    public String toString() {
+        return titulo + " - " + artista;
+    }
+}

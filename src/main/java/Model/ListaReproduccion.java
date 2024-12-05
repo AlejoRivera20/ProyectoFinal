@@ -16,7 +16,9 @@ public class ListaReproduccion
 
     public void agregarCancion(Cancion cancion)
     {
-        // siguiente entregar agregar funcionalidad
+       if(cancion != null ){
+           canciones.add(cancion);
+       }
     }
 
     public String getNombre()
